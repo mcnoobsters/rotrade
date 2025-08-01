@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Gamepad2, Crown, Gem, DollarSign, Star, Trophy } from "lucide-react";
 
 const categories = [
@@ -62,43 +63,47 @@ const TradingCategories = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {categories.map((category, index) => (
-            <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer relative overflow-hidden">
-              {category.trending && (
-                <div className="absolute top-4 right-4">
-                  <span className="bg-trading-success text-white text-xs px-2 py-1 rounded-full font-medium">
-                    Trending
-                  </span>
+            <Link key={index} to={`/marketplace?category=${encodeURIComponent(category.title)}`}>
+              <Card className="p-6 hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer relative overflow-hidden h-full">
+                {category.trending && (
+                  <div className="absolute top-4 right-4">
+                    <span className="bg-trading-success text-white text-xs px-2 py-1 rounded-full font-medium">
+                      Trending
+                    </span>
+                  </div>
+                )}
+                
+                <div className="flex items-start space-x-4 mb-4">
+                  <div className="bg-gradient-to-r from-trading-primary to-trading-success p-3 rounded-lg">
+                    <category.icon className="h-6 w-6 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-foreground mb-2">
+                      {category.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm mb-3">
+                      {category.description}
+                    </p>
+                    <p className="text-trading-primary text-sm font-medium">
+                      {category.trades}
+                    </p>
+                  </div>
                 </div>
-              )}
-              
-              <div className="flex items-start space-x-4 mb-4">
-                <div className="bg-gradient-to-r from-trading-primary to-trading-success p-3 rounded-lg">
-                  <category.icon className="h-6 w-6 text-white" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
-                    {category.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-3">
-                    {category.description}
-                  </p>
-                  <p className="text-trading-primary text-sm font-medium">
-                    {category.trades}
-                  </p>
-                </div>
-              </div>
-              
-              <Button variant="outline" className="w-full mt-4">
-                Browse Category
-              </Button>
-            </Card>
+                
+                <Button variant="outline" className="w-full mt-4">
+                  Browse Category
+                </Button>
+              </Card>
+            </Link>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="trading" size="lg">
-            View All Categories
-          </Button>
+          <Link to="/marketplace">
+            <Button variant="trading" size="lg">
+              View All Categories
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

@@ -23,7 +23,7 @@ const Header = () => {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <Link to="/" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/marketplace" className="text-foreground hover:text-primary transition-colors">
               Marketplace
             </Link>
             {user && (

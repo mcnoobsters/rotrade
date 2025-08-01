@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -118,7 +119,9 @@ const FeaturedTrades = () => {
               Hand-picked deals from verified sellers with the best prices
             </p>
           </div>
-          <Button variant="outline">View All</Button>
+          <Link to="/marketplace">
+            <Button variant="outline">View All</Button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

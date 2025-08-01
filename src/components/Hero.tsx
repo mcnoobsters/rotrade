@@ -46,9 +46,11 @@ const Hero = () => {
                 </Button>
               </Link>
             )}
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6">
-              Browse Marketplace
-            </Button>
+            <Link to="/marketplace">
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6">
+                Browse Marketplace
+              </Button>
+            </Link>
           </div>
 
           {/* Feature Highlights */}
