@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, User, Menu, TrendingUp, LogOut } from "lucide-react";
+import { ShoppingCart, User, TrendingUp, LogOut } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 import { Link } from "react-router-dom";
+import MobileMenu from "./MobileMenu";
 
 const Header = () => {
   const { user, signOut } = useAuth();
@@ -74,9 +75,7 @@ const Header = () => {
                 </Button>
               </Link>
             )}
-            <Button variant="ghost" size="sm" className="md:hidden">
-              <Menu className="h-4 w-4" />
-            </Button>
+            <MobileMenu />
           </div>
         </div>
       </div>

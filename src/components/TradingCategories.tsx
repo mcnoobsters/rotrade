@@ -5,9 +5,9 @@ import { Gamepad2, Crown, Gem, DollarSign, Star, Trophy } from "lucide-react";
 
 const categories = [
   {
-    title: "Pet Simulator X",
+    title: "Grow A Garden",
     icon: Gamepad2,
-    description: "Trade rare pets, gems, and exclusive items",
+    description: "Trade rare plants, seeds, and exclusive items",
     trades: "1,234 active trades",
     trending: true
   },

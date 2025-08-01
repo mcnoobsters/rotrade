@@ -227,7 +227,7 @@ const PostTrade = () => {
                       <SelectValue placeholder="Select game" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="Pet Simulator X">Pet Simulator X</SelectItem>
+                      <SelectItem value="Grow A Garden">Grow A Garden</SelectItem>
                       <SelectItem value="Adopt Me">Adopt Me</SelectItem>
                       <SelectItem value="Murder Mystery 2">Murder Mystery 2</SelectItem>
                       <SelectItem value="Arsenal">Arsenal</SelectItem>

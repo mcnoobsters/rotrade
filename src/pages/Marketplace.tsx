@@ -36,7 +36,7 @@ interface Trade {
 
 const categories = [
   "All",
-  "Pet Simulator X",
+  "Grow A Garden",
   "Adopt Me", 
   "Murder Mystery 2",
   "Robux & Gift Cards",
