@@ -42,15 +42,22 @@ const Header = () => {
           {/* Action Buttons */}
           <div className="flex items-center space-x-3">
             {user && (
-              <Button variant="outline" size="sm" className="hidden sm:flex">
-                <ShoppingCart className="h-4 w-4 mr-2" />
-                Cart
-              </Button>
+              <>
+                <Link to="/post-trade">
+                  <Button variant="trading" size="sm" className="hidden sm:flex">
+                    Post Trade
+                  </Button>
+                </Link>
+                <Button variant="outline" size="sm" className="hidden sm:flex">
+                  <ShoppingCart className="h-4 w-4 mr-2" />
+                  Cart
+                </Button>
+              </>
             )}
             {user ? (
               <div className="flex items-center space-x-2">
                 <Link to="/dashboard">
-                  <Button variant="trading" size="sm">
+                  <Button variant="outline" size="sm">
                     <User className="h-4 w-4 mr-2" />
                     Dashboard
                   </Button>

@@ -34,9 +34,9 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             {user ? (
-              <Link to="/dashboard">
+              <Link to="/post-trade">
                 <Button variant="hero" size="lg" className="text-lg px-8 py-6">
-                  Start Trading Now
+                  Post Trade Now
                 </Button>
               </Link>
             ) : (
