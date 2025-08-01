@@ -16,7 +16,7 @@ const Header = () => {
               <TrendingUp className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">CrossTrade</h1>
+              <h1 className="text-xl font-bold text-foreground">RoTrade</h1>
               <p className="text-sm text-muted-foreground">Roblox Trading Hub</p>
             </div>
           </div>

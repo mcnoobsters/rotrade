@@ -91,14 +91,14 @@ const Auth = () => {
             <TrendingUp className="h-8 w-8 text-white" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-foreground">CrossTrade</h1>
+            <h1 className="text-2xl font-bold text-foreground">RoTrade</h1>
             <p className="text-sm text-muted-foreground">Roblox Trading Hub</p>
           </div>
         </div>
 
         <Card>
           <CardHeader>
-            <CardTitle>Welcome to CrossTrade</CardTitle>
+            <CardTitle>Welcome to RoTrade</CardTitle>
             <CardDescription>
               Sign in to your account or create a new one to start trading
             </CardDescription>
