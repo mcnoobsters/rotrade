@@ -1,8 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Shield, TrendingUp, Users, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useAuth } from "@/hooks/useAuth";
 import heroImage from "@/assets/hero-trading.jpg";
 
 const Hero = () => {
+  const { user } = useAuth();
+
   return (
     <section className="relative bg-gradient-to-br from-background to-secondary py-20 overflow-hidden">
       {/* Background Image */}
@@ -29,9 +33,19 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <Button variant="hero" size="lg" className="text-lg px-8 py-6">
-              Start Trading Now
-            </Button>
+            {user ? (
+              <Link to="/dashboard">
+                <Button variant="hero" size="lg" className="text-lg px-8 py-6">
+                  Start Trading Now
+                </Button>
+              </Link>
+            ) : (
+              <Link to="/auth">
+                <Button variant="hero" size="lg" className="text-lg px-8 py-6">
+                  Start Trading Now
+                </Button>
+              </Link>
+            )}
             <Button variant="outline" size="lg" className="text-lg px-8 py-6">
               Browse Marketplace
             </Button>

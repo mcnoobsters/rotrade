@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, User, Menu, TrendingUp } from "lucide-react";
+import { ShoppingCart, User, Menu, TrendingUp, LogOut } from "lucide-react";
+import { useAuth } from "@/hooks/useAuth";
+import { Link } from "react-router-dom";
 
 const Header = () => {
+  const { user, signOut } = useAuth();
+
   return (
     <header className="bg-card border-b border-border shadow-sm">
       <div className="container mx-auto px-4 py-3">
@@ -19,12 +23,14 @@ const Header = () => {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
-            <a href="#marketplace" className="text-foreground hover:text-primary transition-colors">
+            <Link to="/" className="text-foreground hover:text-primary transition-colors">
               Marketplace
-            </a>
-            <a href="#trading" className="text-foreground hover:text-primary transition-colors">
-              My Trades
-            </a>
+            </Link>
+            {user && (
+              <Link to="/dashboard" className="text-foreground hover:text-primary transition-colors">
+                My Trades
+              </Link>
+            )}
             <a href="#guides" className="text-foreground hover:text-primary transition-colors">
               Trading Guides
             </a>
@@ -35,14 +41,32 @@ const Header = () => {
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-3">
-            <Button variant="outline" size="sm" className="hidden sm:flex">
-              <ShoppingCart className="h-4 w-4 mr-2" />
-              Cart
-            </Button>
-            <Button variant="trading" size="sm">
-              <User className="h-4 w-4 mr-2" />
-              Login
-            </Button>
+            {user && (
+              <Button variant="outline" size="sm" className="hidden sm:flex">
+                <ShoppingCart className="h-4 w-4 mr-2" />
+                Cart
+              </Button>
+            )}
+            {user ? (
+              <div className="flex items-center space-x-2">
+                <Link to="/dashboard">
+                  <Button variant="trading" size="sm">
+                    <User className="h-4 w-4 mr-2" />
+                    Dashboard
+                  </Button>
+                </Link>
+                <Button variant="outline" size="sm" onClick={signOut}>
+                  <LogOut className="h-4 w-4" />
+                </Button>
+              </div>
+            ) : (
+              <Link to="/auth">
+                <Button variant="trading" size="sm">
+                  <User className="h-4 w-4 mr-2" />
+                  Login
+                </Button>
+              </Link>
+            )}
             <Button variant="ghost" size="sm" className="md:hidden">
               <Menu className="h-4 w-4" />
             </Button>
