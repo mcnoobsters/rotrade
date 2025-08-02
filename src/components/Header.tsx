@@ -32,12 +32,18 @@ const Header = () => {
                 My Trades
               </Link>
             )}
-            <a href="#guides" className="text-foreground hover:text-primary transition-colors">
+            <button 
+              onClick={() => document.getElementById('guides')?.scrollIntoView({ behavior: 'smooth' })}
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Trading Guides
-            </a>
-            <a href="#support" className="text-foreground hover:text-primary transition-colors">
+            </button>
+            <button 
+              onClick={() => document.getElementById('support')?.scrollIntoView({ behavior: 'smooth' })}
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Support
-            </a>
+            </button>
           </nav>
 
           {/* Action Buttons */}
